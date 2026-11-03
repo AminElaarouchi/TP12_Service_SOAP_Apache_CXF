@@ -24,3 +24,17 @@ mvn exec:java -Dexec.mainClass=com.acme.cxf.SecureServer
 WSDL sécurisé : `http://localhost:8080/services/hello-secure?wsdl`. Dans SoapUI, configurer un UsernameToken `student` / `secret123` de type PasswordText. Le mot de passe de démonstration peut être changé via `SOAP_DEMO_PASSWORD`. Un appel sans token doit renvoyer une SOAP Fault. Ce mode est pédagogique ; utiliser TLS et une gestion de secrets adaptée pour un déploiement réel.
 
 Le WSDL est généré directement par CXF ; il expose `SayHello` et `FindPerson`. UDDI est présenté dans le cours comme mécanisme historique de découverte de services.
+
+## Résultat vérifié
+
+Commande exécutée le 3 novembre 2026 :
+
+```powershell
+mvn -B test
+```
+
+1 test du service SOAP réussi (0 échec).
+
+![Résultat de la vérification dans le terminal](docs/verification-terminal.png)
+
+L’image est une transcription visuelle de la sortie réelle de vérification ; la capture native de la fenêtre du terminal n’était pas disponible dans cet environnement.
